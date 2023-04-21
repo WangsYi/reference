@@ -6,7 +6,7 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: TG908/fork-sync@v1.6.5
+      - uses: zwping/fork-sync@v1.6.5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           owner: jaywcjlove # fork 的上游仓库 user
