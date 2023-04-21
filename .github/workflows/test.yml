@@ -3,18 +3,12 @@ name: test
 on: [workflow_dispatch]
 
 jobs:
-  sync:
+  repo-sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Fetch upstream
-        run: git remote add upstream https://github.com/jaywcjlove/reference.git
-
-      - name: Merge upstream
-        run: |
-          git fetch upstream
-          git checkout gh-pages
-          git merge upstream/gh-pages
-          git push
+      - uses: TG908/fork-sync@v1.6.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: jaywcjlove # fork 的上游仓库 user
+          head: gh-pages # fork 的上游仓库 branch
+          base: gh-pages # 本地仓库 branch
