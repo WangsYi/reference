@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: zwping/fork-sync@v1.6.5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_TOKEN }}
           owner: jaywcjlove # fork 的上游仓库 user
           head: gh-pages # fork 的上游仓库 branch
           base: gh-pages # 本地仓库 branch
